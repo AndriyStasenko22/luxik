@@ -1,0 +1,129 @@
+// головний слайдер
+.home_slider{
+	margin: 0 -15px;
+	img{
+		width: 100%;
+	}
+	.slider-item{
+		position: relative;
+	}
+	.slider-item-text{
+		position: absolute;
+		width: 50%;
+		top: 20%;
+		left: 15%;
+		text-transform: uppercase;
+	}
+	.slider-item-text-title{
+		font-size: 5vw;
+	}
+	.slider-item-text-description{
+		font-size: 7vw;
+	}
+}
+
+// слайдер "НОВые ПОСТУПЛЕНИЕ"
+.products-slider{
+	.overlay{
+		background-color: rgba(110,202,249, 0.5);
+		color: #fff;
+	}
+	.owl-nav{
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		z-index: 2;
+		.owl-prev, .owl-next{
+			position: absolute;
+			top: -13px;
+			width: 26px;
+			height: 26px;
+			border: 2px solid #3f3f3f;
+			color: #393939;
+			text-align: center;
+			transition: all 0.3s;
+			&:hover{
+				border-color: #f77b7b;
+				background-color: #f77b7b;
+				color: #fff;
+			}
+		}
+		.owl-prev{
+			left: -41px;
+		}
+		.owl-next{
+			right: -41px;
+		}
+		.fa{
+			font-size: 20px;
+			line-height: 22px;
+			font-weight: 600;
+		}
+	}
+}
+
+.colection_itme{
+	img{
+		width: 100%;
+	}
+	display: flex;
+	justify-content: space-around;
+	.product-item-big{
+		max-width: 585px;
+		.overlay{
+			flex-direction: column;
+			background-color: rgba(255, 234, 219, 0.5);
+			color: #fff;
+		}
+		.base_button{
+			min-width: 126px;
+			margin-top: 25px;
+			background-color: @color_body;
+			color: #fff;
+			&:hover{
+				background-color: @red;
+				color: #fff;
+			}
+		}
+	}
+	.product-item{
+		margin-left: 3px;
+		max-width: 290px;
+		.overlay{
+			background-color: rgba(110,202,249, 0.5);
+			color: #fff;
+		}
+		.base_button{
+			margin: 15px 10px;
+			border: 1px solid #bebebe;
+			color: @red;
+			.fa{
+				font-size: 17px;
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			&:hover{
+				color: #fff;
+			}
+		}
+	}
+
+	.section_title{
+		margin-bottom: 10px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.39);
+		font-weight: 500;
+
+	}
+	.coletion_number{
+		font-size: 16px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.39);
+		font-weight: 500;
+	}
+	.product_name{
+		font-size: 16px;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+	}
+
+}
+

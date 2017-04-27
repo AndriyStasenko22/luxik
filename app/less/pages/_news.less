@@ -1,0 +1,91 @@
+// новини головна сторінка
+
+.news{
+	background-color: #fff;
+	border: 1px solid #eaeaea;
+	min-height: 425px;
+	margin-bottom: 30px;
+	.news_img{
+		min-height: 210px;
+		overflow: hidden;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	.news_title{
+		text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 600;
+		text-transform: uppercase;
+		height: 73px;
+		padding: 0 15px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		a{
+			color: @color_body;
+			line-height: 73px;
+			transition: all 0.4s;
+			&:hover{
+				text-decoration: none;
+				color: @red;
+			}
+		}
+	}
+	.news_data-info{
+		height: 33px;
+		border: 1px solid #eaeaea;
+		background-color: #f6f6f6;
+		border-width: 1px 0 1px 0;
+		display: flex;
+		align-items: center;
+		font-size: 12px;
+		font-weight: 400;
+		color: #aeaeae;
+	}
+	.news_data, .news_coment{
+		width: 50%;
+		text-align: center;
+	}
+	.news_data{
+		border-right: 1px solid #eaeaea;
+		&:before{
+			content: "\f073";
+			font-family: "FontAwesome";
+			margin-right: 5px;
+			font-size: 18px;
+		}
+	}
+	.news_coment:before{
+		content: "";
+		margin-right: 5px;
+		width: 19px;
+		height: 17px;
+		display: inline-block;
+		vertical-align: middle;
+		background-image: url(../img/icon/chat.png);
+	}
+	.news_short_info{
+		padding: 25px 35px 0 19px;
+		height: 135px;
+		overflow: hidden;
+		display: block;
+		position: relative;
+		margin-bottom: 30px;
+	}
+}
+
+.home_news{
+	background-color: @color_news_home;
+	.section_line span{
+		background-color: @color_news_home;
+	}
+	.base_button{
+		width: 174px;
+		margin-top: 10px;
+		.fa{
+			margin-left: 10px;
+		}
+	}
+}
