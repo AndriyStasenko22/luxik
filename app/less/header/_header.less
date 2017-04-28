@@ -118,11 +118,12 @@ header{
 		align-items: center;
 		@media only screen and (max-width : 768px){
 			justify-content: center;
-			align-items: center;
+			flex-direction: column;
+			padding: 20px 0;
 		}
 	}
-	// мобільне меню
-	.mobile-menu{
+	// кнопка мобільне меню
+	.mobile-menu-btn{
 		width: 30px;
 		height: 30px;
 		border: 1px solid  #ebebeb;
@@ -135,6 +136,21 @@ header{
 			line-height: 28px;
 		}
 	}
+	// мобільне меню шапка
+	.mobile-header-menu{
+		li{
+			display: inline-block;
+			margin: 10px 7px 0;
+			a{
+				color: #fff;
+				text-transform: uppercase;
+				&:hover{
+					color: @red;
+				}
+			}
+		}
+	}
+
 	.login, .registration{
 		color: #fff;
 		margin-left: 20px;
@@ -187,51 +203,10 @@ header{
 		.header_menu{
 			display: flex;
 			justify-content: space-between;
-			text-transform: uppercase;
 			li{
 				display: inline-block;
-				a, .fa{
-					color: @color_body;
-					line-height: 50px;
-					font-size: 13px;
-					font-weight: 600;
-					display: inline-block;
-					transition: all 0.3s;
-				}
-				&:hover{
-					a, .fa{
-						text-decoration: none;
-						color: @red;
-					}
-				}
 			}
 			.menu_categoty{
-				position: relative;
-				padding: 0 22px;
-				border: 1px solid  #eee9e5;
-				border-width: 0 1px 0 1px;
-				transition: all 0.3s;
-				>a{
-					font-size: 16px;
-					font-weight: 300;
-					font-family: 'Oswald';
-				}
-				.fa{
-					font-size: 19px;
-					margin-right: 15px;
-				}
-				.dropdown{
-					min-width: 220px;
-					margin-left: -22px;
-					li{
-						padding: 0 22px;
-						border-bottom: 1px solid  #e9e9e9;
-						a{
-							line-height: 40px;
-							font-weight: normal;
-						}
-					}
-				}
 				&:hover{
 					background-color: #fce8d7;
 					a, .fa{
@@ -243,11 +218,9 @@ header{
 					}
 				}
 			}
-			.headre-dropdown-li{
-				.fa{
-					margin-left: 10px;
-				}
-			}
+		}
+		.search{
+			margin: 0 -15px;
 		}
 		.search button, input{
 			border: 0;

@@ -8,7 +8,6 @@
 		justify-content: space-around;
 		height: 48px;
 		border-bottom: 2px solid  @color_line;
-		margin-bottom: 40px;
 		li{
 			height: 100%;
 			cursor: pointer;
@@ -27,7 +26,6 @@
 				visibility: visible;
 				opacity: 1;
 			}
-
 		}
 		.tab{
 			line-height: 14px;
@@ -35,6 +33,9 @@
 			font-weight: 600;
 			transition: all 0.3s;
 			line-height: 48px;
+			@media only screen and (max-width : 768px){
+				font-size: 12px;
+			}
 		}
 		.dot{
 			position: absolute;

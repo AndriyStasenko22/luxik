@@ -41,7 +41,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 // });
 
 gulp.task('watch', ['browser-sync', 'less', 'scripts'], function() {
-    gulp.watch('app/less/**/*.less', ['less']); // Наблюдение за sass файлами
+    gulp.watch('app/less/**/*.less', ['less']); // Наблюдение за less файлами
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
     gulp.watch('app/js/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
 });

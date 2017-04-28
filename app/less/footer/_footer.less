@@ -1,6 +1,6 @@
 footer{
 	background-color: @color_body;
-	
+	font-size: 13px;
 	.footer_top_line{
 		border-bottom: 1px solid  #4c4b4a;
 	}
@@ -18,6 +18,9 @@ footer{
 	
 	.footer_logo{
 		height: 230px;
+		@media only screen and (max-width : 768px){
+			height: 150px;
+		}
 	}
 	
 	.copyright{
@@ -31,13 +34,10 @@ footer{
 	}
 
 	.footer_content-block{
-		padding: 50px 0;
+		padding: 50px 15px;
 		margin: 0 -15px;
 		border-right: 1px solid  #4c4b4a;
-		display: flex;
-		justify-content: center;
 		color: #fff;
-		flex-wrap: wrap;
 		line-height: 30px;
 		a{
 			color: #fff;
@@ -55,6 +55,7 @@ footer{
 		font-weight: 400;
 		text-transform: uppercase;
 		margin-bottom: 30px;
+		text-align: center;
 	}
 	.footer_contact .fa{
 		margin-right: 10px;
@@ -63,5 +64,17 @@ footer{
 	}
 	.footer_acout{
 		text-align: center;
+	}
+	.footer_colom_left, .footer_colom_right{
+		display: inline-block;
+		width: 45%;
+		vertical-align: top;
+	}
+	.footer_colom_left{
+		margin-right: 8%;
+		text-align: right;
+	}
+	.footer_colom_right{
+		text-align: left;
 	}
 }
