@@ -56,18 +56,28 @@ products_slider.owlCarousel({
 		loop: true
 	})
 
+	// таби на головній сторінці
+
 	$('.colection_tabs li').click(function() {
 		$('.colection_tabs li.active').removeClass('active');
 		$(this).addClass('active');
 		colection_slider.trigger("to.owl.carousel", [$(this).index(), 300]);
 	});
 
+	$('.paginator li').click(function() {
+		$('.paginator li.active').removeClass('active');
+		$(this).addClass('active');
+	});
+
+
 	// кнопка на верх
+
 	$('.btn_scroll').click(function() {
 		$('html, body').animate({scrollTop: 0},600);
 	});
 
 	// мобільне меню
+
 	$('.mobile-menu-btn').click(function() {
 		$('.mobile-menu-left').animate({left: '0%'}, 500);
 		$('.body-overlay').css("visibility",'visible').animate({opacity: 1},500);
@@ -76,10 +86,24 @@ products_slider.owlCarousel({
 		$('.body-overlay').css("visibility",'hidden').animate({opacity: 0}, 500);
 		$('.mobile-menu-left').animate({left: '-100%'}, 500);
 	});
-	$(".mobile-menu-left .menu_categoty").click(function() {
-		$(this).children(".dropdown").slideToggle(300);
+
+
+	// dropdown in mobile-menu-left
+
+	$(".mobile-menu-left li").click(function() {
+		$(this).children(".dropdown").slideToggle('slow');
 	});
 
+	// dropdown_search
+	
+	$('.search input').keyup(function(){
+		if($(this).val().length > 3) {
+			$('.dropdown_search').slideDown('slow');
+		}
+		else{
+			$('.dropdown_search').slideUp('slow');
+		}
+	});
 });
 
 
