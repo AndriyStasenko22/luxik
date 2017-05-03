@@ -811,11 +811,13 @@ header .headre_bottomline .search button {
   padding: 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  outline: none;
 }
 header .headre_bottomline .search button:hover,
 header .headre_bottomline .search button:focus {
   background-color: transparent;
   color: #f77b7b;
+  outline: none;
 }
 header .dropdown_basket {
   max-height: 292px;
@@ -1431,4 +1433,21 @@ footer .footer_colom_right {
   .home_catalog .home_catalog_info .section_title {
     text-align: center;
   }
+}
+.catalog-filter-line {
+  min-height: 65px;
+  border: 1px solid #ececec;
+  border-bottom: 4px solid  #3f3f3f;
+  background-color: #f6f6f6;
+  margin: 80px 0 35px;
+}
+.catalog-content .section_title {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+}
+.catalog-item {
+  height: 348px;
+  border: 1px solid #eaeaea;
+  margin-bottom: 30px;
 }
