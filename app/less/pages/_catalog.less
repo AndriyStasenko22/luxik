@@ -18,3 +18,160 @@
 	border: 1px solid #eaeaea;
 	margin-bottom: 30px;
 }
+.catalog-item_img, .catalog-item-info, .price_old, .price_new, .catalog-item-button, .catalog-item-count{
+	display: inline-block;
+}
+.catalog-item_img{
+	height: 100%;
+	width: 260px;
+	overflow: hidden;
+	vertical-align: top;
+	img{
+		width: 100%;
+	}
+}
+.catalog-item-info{
+	padding: 20px 30px;
+	width: 68%;
+	height: 100%;
+	line-height: 1;
+}
+.catalog-item-title{
+	color: #333333;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-bottom: 1px solid #eaeaea;
+	line-height: 1;
+	margin-bottom: 0;
+	p{
+		display: inline-block;
+	}
+	.article-item{
+		float: right;
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 14px;
+		color: #a9a9a9;
+		text-transform: none;
+	}
+}
+.catalog-item-color, .catalog-item-size p{
+	color: #333333;
+	font-size: 12px;
+	font-weight: 400;
+}
+.catalog-item-color{
+	margin-bottom: 15px;
+	li{
+		display: inline-block;
+		border: 1px solid #eaeaea;
+		margin-right: 10px;
+		a{
+			width: 35px;
+			height: 46px;
+			display: inline-block;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	li.active{
+		border-color: @red;
+	}
+}
+.catalog-item-price{
+	margin: 15px 0 30px;
+	font-family: 'Oswald';
+	font-weight: 500;
+	.price_new{
+		color: #282828;
+		margin-right: 10px;
+		font-size: 20px;
+		.currency{
+			font-size: 19px;
+		}
+	}
+	.price_old{
+		vertical-align: top;
+		color: @red;
+		text-decoration: line-through;
+		.currency{
+			vertical-align: middle;
+			font-size: 10px;
+		}
+	}
+}
+
+.catalog-item-size{
+	margin-bottom: 45px;
+	li{
+		display: inline-block;
+		border: 1px solid #3f3f3f;
+		width: 28px;
+		height: 28px;
+		text-align: center;
+		margin-right: 10px;
+		a{
+			display: inline-block;
+			line-height: 26px;
+			font-size: 10px;
+			font-weight: 700;
+			color: @color_body;
+		}
+	}
+	li.active:not(.fancy){
+		background-color: @color_body;
+		a{
+			color: #fff;
+		}
+	}
+}
+.catalog-item-count{
+	width: 78px;
+	height: 36px;
+	border: 1px solid #eaeaea;
+	vertical-align: top;
+	margin-right: 10px;
+	input{
+		width: 28px;
+		height: 34px;
+		vertical-align: top;
+		border: 0;
+		outline: none;
+		text-align: center;
+		font-weight: bold;
+		font-size: 12px;
+	}
+	a{
+		line-height: 34px;
+		width: 20px;
+		display: inline-block;
+		text-align: center;
+		font-size: 17px;
+		font-weight: bold;
+		color: initial;
+		transition: all 0.3s;
+		&:hover{
+			color: #fff;
+			background-color: @color_body;
+		}
+	}
+}
+.catalog-item-button{
+	width: 163px;
+	.base_button{
+		border: 1px solid #c8c8c8;
+		color: #b3b3b3;
+		line-height: 34px;
+		&:hover{
+			background-color: @color_body;
+			color: #fff;
+		}
+	}
+	.fa{
+		font-size: 17px;
+		color: @red;
+		margin-right: 10px;
+	}
+}

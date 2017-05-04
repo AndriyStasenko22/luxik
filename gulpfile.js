@@ -20,7 +20,9 @@ gulp.task('scripts', function() {
         'app/libs/jquery/dist/jquery.min.js', // jQuery
         'app/libs/bootstrap/js/bootstrap.min.js', // Bootsrap
         'app/libs/slick-carousel/slick/slick.min.js', //SlickSlider
-        'app/libs/owl.carousel/dist/owl.carousel.min.js' //OwlCarousel
+        'app/libs/owl.carousel/dist/owl.carousel.min.js', //OwlCarousel
+        'app/libs/jquery-fancyBox/dist/jquery.fancybox.min.js' //FancyBox
+
         ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
