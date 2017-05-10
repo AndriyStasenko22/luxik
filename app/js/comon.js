@@ -116,19 +116,18 @@ products_slider.owlCarousel({
 	// таблиця розмірів
 	$('.fancy-table').fancybox();
 
-	// вибір кольора товара
-	$('.catalog-item .catalog-item-size li a').click(function(event) {
+	// вибір розміру товара
+	$('.catalog-item .catalog-item-size li:not(.fancy)>a').click(function(event) {
 		event.preventDefault();
-		$(this).parents('ul').children('li').removeClass('active');
-		$(this).parent().not(".fancy").addClass('active');
+		addActive(this);
 	});
 
-	// вибір розміру товара
+	// вибір кольора товара
 	$('.catalog-item .catalog-item-color li a').click(function(event) {
 		event.preventDefault();
-		$(this).parents('ul').children('li').removeClass('active');
-		$(this).parent().addClass('active');
-		$(this).parents('.catalog-item-info').siblings('.catalog-item_img').find('img').attr('src', $(this).children('img').attr('src'));;
+		addActive(this);
+		let srcImg=$(this).children('img').attr('src');
+		$(this).parents('.catalog-item-info').siblings('.catalog-item_img').find('img').attr('src', srcImg);
 	});
 
 	// кількість товару
@@ -178,10 +177,6 @@ $(window).on('load', function() {
 
 
 function addActive(elem){
-	if($(elem).parent().hasClass('active')){
-		$(elem).parent().removeClass('active');
-	}
-	else{
-		$(elem).parent().addClass('active');
-	}
+	$(elem).parents('ul').children('li').removeClass('active');
+	$(elem).parent().addClass('active');
 }
