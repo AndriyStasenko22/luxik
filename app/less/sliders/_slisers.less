@@ -142,3 +142,47 @@
 
 }
 
+.cloud9-item{
+	cursor: pointer;
+	transition: transform 0.23s;
+}
+#carousel{
+	height: 400px !important;
+	.circle1, .circle2, .circle3, .circle4, h3{
+		position: absolute;
+	}
+	.circle1{
+		top: 39%;
+		left: 60%;
+	}
+	.circle2{
+		top: 33%;
+		left: 63%;
+	}
+	.circle3{
+		top: 20%;
+		left: 65%;
+	}
+	.circle4{
+		top: -95%;
+		left: 40%;
+	}
+	h3{
+		color: #005690;
+		top: 42%;
+		left: 52%;
+	}
+	.circle1.animated {
+		animation-delay: 1.5s;
+	}
+	.circle2.animated{
+		animation-delay: 1.7s;
+	}
+	.circle3.animated{
+		animation-delay: 1.9s;
+	}
+	h3.animated,.circle4.animated{
+		animation-duration: 1.3s;
+		animation-delay: 2.5s;
+	}
+}

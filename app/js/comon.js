@@ -50,7 +50,6 @@ products_slider.owlCarousel({
 		},
 		992:{
 			items:4
-
 		}
 	}
 });
@@ -66,30 +65,29 @@ products_slider.owlCarousel({
 	})
 
 	// таби на головній сторінці
-
 	$('.colection_tabs li').click(function() {
-		$('.colection_tabs li.active').removeClass('active');
+		$(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
 		colection_slider.trigger("to.owl.carousel", [$(this).index(), 300]);
 	});
 
-	$('.paginator li').click(function() {
-		$('.paginator li.active').removeClass('active');
-		$(this).addClass('active');
+	// пагінатор
+	$('.paginator li a').click(function(e) {
+		e.preventDefault();
+		$(this).parent().siblings('li').removeClass('active');
+		$(this).parent().addClass('active');
 	});
 
 
 	// кнопка на верх
-
 	$('.btn_scroll').click(function() {
 		$('html, body').animate({scrollTop: 0},600);
 	});
 
 	// мобільне меню
-
 	$('.mobile-menu-btn').click(function() {
-		$('.mobile-menu-left').animate({left: '0%'}, 500);
 		$('.body-overlay').css("visibility",'visible').animate({opacity: 1},500);
+		$('.mobile-menu-left').animate({left: '0%'}, 500);
 		$('body').css('overflow', 'hidden');
 	});
 	$('.body-overlay').click(function() {
@@ -100,13 +98,11 @@ products_slider.owlCarousel({
 
 
 	// dropdown in mobile-menu-left
-
 	$(".mobile-menu-left li").click(function() {
 		$(this).children(".dropdown").slideToggle('slow');
 	});
 
 	// dropdown_search
-	
 	$('.search input').keyup(function(){
 		if($(this).val().length > 3) {
 			$('.dropdown_search').slideDown('slow');
@@ -152,24 +148,69 @@ products_slider.owlCarousel({
 		}
 	});
 
+	// бокове меню "Каталог"
 	$('.catalog-sidebar-list .dropdown_li>a').click(function(event) {
 		event.preventDefault();
 		$(this).parent('.dropdown_li').toggleClass("open").find('.hidden-dropdown-ul').slideToggle('fast');
 	});
 
-
+	// мобільне меню "Каталог"
 	$('.catalog-sidebar .section_title').click(function() {
 		if($(window).width()<768){
 			$(this).toggleClass("open").siblings('.hidden-block').slideToggle('fast');
 		}
 	});
 
-
 	$('.catalog-sidebar-color li a').click(function(event) {
 		event.preventDefault();
-		$(this).parents('.catalog-sidebar-color').find('li').removeClass('active');
-		$(this).parent().addClass('active');
+		addActive(this);
 	});
+
+	var showcase = $("#carousel");
+	showcase.Cloud9Carousel( {
+		yRadius: 60,
+		xRadius: 750,
+		transforms:true,
+		mirrorOptions: {
+			gap: 20,
+			height: 0.2
+		},
+		buttonLeft: $("#buttons > .left"),
+		buttonRight: $("#buttons > .right"),
+	// autoPlay: true,
+	bringToFront: true,
+	onLoaded: function() {
+		showcase.css( 'visibility', 'visible' ),
+		showcase.css( 'overflow', 'visible' )
+		showcase.css( 'display', 'none' ),
+		showcase.fadeIn( 1500 ),
+		showcase.css( '', '' )
+	},
+	onRendered:function() {
+		// showcase.children("img:not(.cloud9-item)").removeClass('animated fadeInUp');
+		showcase.children("img:not(.cloud9-item, .circle4)").addClass('animated fadeInUp');
+		showcase.children("img.circle4").addClass('animated fadeIn');
+		showcase.children("h3").addClass('animated fadeInLeft');
+		showcase.children(".cloud9-item").each(function() {
+			if($(this).css('z-index') != 100){
+				$(this).css('filter', 'blur(2px)');
+			}
+			else{
+				$(this).css('filter', 'blur(0px)');
+			}
+		});
+	},
+	onAnimationFinished: function(){
+	}
+});
+
+	$('.cloud9-item, #buttons>.left, #buttons>.right').click(function() {
+		$('#carousel img:not(.cloud9-item, .circle4)').removeClass('animated fadeInUp');
+		$('#carousel img.circle4').removeClass('animated fadeIn');
+		$('#carousel h3').removeClass('animated fadeInLeft');
+	});
+
+
 });
 
 

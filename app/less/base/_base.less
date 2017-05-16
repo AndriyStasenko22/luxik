@@ -431,16 +431,15 @@ a:hover, a:active, a:focus{
 		}
 	}
 }
+
+// пагінатор
 .paginator{
 	padding-top: 30px;
 	text-align: center;
 	ul li{
 		display: inline-block;
-		height: 35px;
-		min-width: 35px;
 		border: 2px solid #3f3f3f;
 		margin: 0 5px;
-		line-height: 30px;
 		&:last-child{
 			padding: 0 10px;
 		}
@@ -451,10 +450,14 @@ a:hover, a:active, a:focus{
 			}
 		}
 		a{
+			height: 33px;
+			min-width: 33px;
 			color:initial;
 			text-decoration: none;
 			font-weight: 700;
 			font-size: 12px;
+			display: inline-block;
+			line-height: 31px;
 		}
 	}
 	li.active{
