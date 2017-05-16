@@ -312,17 +312,32 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12">
 					<div class="catalog-filter-line">
-					<div class="row">
+						<div class="row">
 							<div class="col-xs-6 col-sm-6">
 								<div class="catalog-filter-button">фильтер</div>
 								<span class="show_rezalt">Показаны все 3 результатов</span>
 							</div>
 							<div class="col-xs-6 col-sm-6">
 								<ul class='main-catalog-buttons'>
-									<li><a href="#"><i class="fa fa-th"></i></a></li>
-									<li><a href="#"><i class="fa fa-th-list"></i></a></li>
+									<li class="active"><a href=".show-table" data-toggle="tab"><i class="fa fa-th"></i></a></li>
+									<li><a href=".show-list" data-toggle="tab"><i class="fa fa-th-list"></i></a></li>
 								</ul>
-								<form action=""></form>
+								<form action="" class="catalog-filter_sorter">
+									<select size="1">
+										<option selected>По умолчанию</option>
+										<option value="white">белый</option>
+										<option value="silver">серый</option>
+										<option value="black">черный</option>
+										<option value="red">красный</option>
+									</select>
+									<select size="1">
+										<option selected>По умолчанию</option>
+										<option value="Чебурашка">152</option>
+										<option value="Крокодил Гена">154</option>
+										<option value="Шапокляк">156</option>
+										<option value="Крыса Лариса">158</option>
+									</select>
+								</form>
 							</div>
 						</div>	
 					</div>
@@ -393,39 +408,212 @@
 					</div>
 				</div>
 				<div class="col-sm-9">
-					<!-- <div class="show-list">
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
+					<div class="tab-content">
+						<div class="show-list tab-pane">
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
+								</div>
+								<div class="catalog-item-info">
+									<div class="catalog-item-title">
+										<p>Куртка Элизар</p>
+										<span class="article-item">Код: 210914</span>
+									</div>
+									<div class="catalog-item-price">
+										<div class="price_new">3575.00 <span class="currency">грн.</span></div><div class="price_old">3575.00 <span class="currency">грн.</div>
+									</div>
+									<div class="catalog-item-color">
+										<p>Выберите цвет</p>
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li class="fancy"><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-size">
+										<p>Выберите размер</p>
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>	
+										</ul>
+									</div>
+									<div class="catalog-item-count">
+										<a href="#" class='count-minus'>-</a>
+										<input type="text" class="" value="1">
+										<a href="#" class='count-plus'>+</a>
+									</div>
+									<div class="catalog-item-button">
+										<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i> В корзину</a>
+									</div>
+								</div>
 							</div>
-							<div class="catalog-item-info">
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
+								</div>
+								<div class="catalog-item-info">
+									<div class="catalog-item-title">
+										<p>Куртка Элизар</p>
+										<span class="article-item">Код: 210914</span>
+									</div>
+									<div class="catalog-item-price">
+										<div class="price_new">3575.00 <span class="currency">грн.</span></div><div class="price_old">3575.00 <span class="currency">грн.</div>
+									</div>
+									<div class="catalog-item-color">
+										<p>Выберите цвет</p>
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-size">
+										<p>Выберите размер</p>
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>	
+										</ul>
+									</div>
+									<div class="catalog-item-count">
+										<a href="#" class='count-minus'>-</a>
+										<input type="text" class="" value="1">
+										<a href="#" class='count-plus'>+</a>
+									</div>
+									<div class="catalog-item-button">
+										<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i> В корзину</a>
+									</div>
+								</div>
+							</div>
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
+								</div>
+								<div class="catalog-item-info">
+									<div class="catalog-item-title">
+										<p>Куртка Элизар</p>
+										<span class="article-item">Код: 210914</span>
+									</div>
+									<div class="catalog-item-price">
+										<div class="price_new">3575.00 <span class="currency">грн.</span></div><div class="price_old">3575.00 <span class="currency">грн.</div>
+									</div>
+									<div class="catalog-item-color">
+										<p>Выберите цвет</p>
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-size">
+										<p>Выберите размер</p>
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>	
+										</ul>
+									</div>
+									<div class="catalog-item-count">
+										<a href="#" class='count-minus'>-</a>
+										<input type="text" class="" value="1">
+										<a href="#" class='count-plus'>+</a>
+									</div>
+									<div class="catalog-item-button">
+										<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i> В корзину</a>
+									</div>
+								</div>
+							</div>
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
+								</div>
+								<div class="catalog-item-info">
+									<div class="catalog-item-title">
+										<p>Куртка Элизар</p>
+										<span class="article-item">Код: 210914</span>
+									</div>
+									<div class="catalog-item-price">
+										<div class="price_new">3575.00 <span class="currency">грн.</span></div><div class="price_old">3575.00 <span class="currency">грн.</div>
+									</div>
+									<div class="catalog-item-color">
+										<p>Выберите цвет</p>
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-size">
+										<p>Выберите размер</p>
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>	
+										</ul>
+									</div>
+									<div class="catalog-item-count">
+										<a href="#" class='count-minus'>-</a>
+										<input type="text" class="" value="1">
+										<a href="#" class='count-plus'>+</a>
+									</div>
+									<div class="catalog-item-button">
+										<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i> В корзину</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="show-table tab-pane active">
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
+								</div>
+								<div class="catalog-item-info">
+									<div class="catalog-item-size">
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-color">
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
+								</div>
 								<div class="catalog-item-title">
 									<p>Куртка Элизар</p>
-									<span class="article-item">Код: 210914</span>
+									<p class="article-item">Код: 210914</p>
 								</div>
 								<div class="catalog-item-price">
-									<div class="price_new">3575.00 <span class="currency">грн.</span></div><div class="price_old">3575.00 <span class="currency">грн.</div>
-								</div>
-								<div class="catalog-item-color">
-									<p>Выберите цвет</p>
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li class="fancy"><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
-								</div>
-								<div class="catalog-item-size">
-									<p>Выберите размер</p>
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>	
-									</ul>
+									<div class="price_new">3575.00 <span class="currency">грн.</span></div>
 								</div>
 								<div class="catalog-item-count">
 									<a href="#" class='count-minus'>-</a>
@@ -433,42 +621,39 @@
 									<a href="#" class='count-plus'>+</a>
 								</div>
 								<div class="catalog-item-button">
-									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i> В корзину</a>
+									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
 								</div>
 							</div>
-						</div>
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
+								</div>
+								<div class="catalog-item-info">
+									<div class="catalog-item-size">
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-color">
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
+								</div>
 								<div class="catalog-item-title">
 									<p>Куртка Элизар</p>
-									<span class="article-item">Код: 210914</span>
+									<p class="article-item">Код: 210914</p>
 								</div>
 								<div class="catalog-item-price">
-									<div class="price_new">3575.00 <span class="currency">грн.</span></div><div class="price_old">3575.00 <span class="currency">грн.</div>
-								</div>
-								<div class="catalog-item-color">
-									<p>Выберите цвет</p>
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
-								</div>
-								<div class="catalog-item-size">
-									<p>Выберите размер</p>
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>	
-									</ul>
+									<div class="price_new">3575.00 <span class="currency">грн.</span></div>
 								</div>
 								<div class="catalog-item-count">
 									<a href="#" class='count-minus'>-</a>
@@ -476,42 +661,39 @@
 									<a href="#" class='count-plus'>+</a>
 								</div>
 								<div class="catalog-item-button">
-									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i> В корзину</a>
+									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
 								</div>
 							</div>
-						</div>
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
+								</div>
+								<div class="catalog-item-info">
+									<div class="catalog-item-size">
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-color">
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
+								</div>
 								<div class="catalog-item-title">
 									<p>Куртка Элизар</p>
-									<span class="article-item">Код: 210914</span>
+									<p class="article-item">Код: 210914</p>
 								</div>
 								<div class="catalog-item-price">
-									<div class="price_new">3575.00 <span class="currency">грн.</span></div><div class="price_old">3575.00 <span class="currency">грн.</div>
-								</div>
-								<div class="catalog-item-color">
-									<p>Выберите цвет</p>
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
-								</div>
-								<div class="catalog-item-size">
-									<p>Выберите размер</p>
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>	
-									</ul>
+									<div class="price_new">3575.00 <span class="currency">грн.</span></div>
 								</div>
 								<div class="catalog-item-count">
 									<a href="#" class='count-minus'>-</a>
@@ -519,42 +701,39 @@
 									<a href="#" class='count-plus'>+</a>
 								</div>
 								<div class="catalog-item-button">
-									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i> В корзину</a>
+									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
 								</div>
 							</div>
-						</div>
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
+								</div>
+								<div class="catalog-item-info">
+									<div class="catalog-item-size">
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-color">
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
+								</div>
 								<div class="catalog-item-title">
 									<p>Куртка Элизар</p>
-									<span class="article-item">Код: 210914</span>
+									<p class="article-item">Код: 210914</p>
 								</div>
 								<div class="catalog-item-price">
-									<div class="price_new">3575.00 <span class="currency">грн.</span></div><div class="price_old">3575.00 <span class="currency">грн.</div>
-								</div>
-								<div class="catalog-item-color">
-									<p>Выберите цвет</p>
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
-								</div>
-								<div class="catalog-item-size">
-									<p>Выберите размер</p>
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>	
-									</ul>
+									<div class="price_new">3575.00 <span class="currency">грн.</span></div>
 								</div>
 								<div class="catalog-item-count">
 									<a href="#" class='count-minus'>-</a>
@@ -562,290 +741,128 @@
 									<a href="#" class='count-plus'>+</a>
 								</div>
 								<div class="catalog-item-button">
-									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i> В корзину</a>
+									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
 								</div>
 							</div>
-						</div>
-					</div> -->
-					<div class="show-table">
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
-								<div class="catalog-item-size">
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
-									</ul>
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
 								</div>
-								<div class="catalog-item-color">
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-info">
+									<div class="catalog-item-size">
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-color">
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
 								</div>
-							</div>
-							<div class="catalog-item-title">
-								<p>Куртка Элизар</p>
-								<p class="article-item">Код: 210914</p>
-							</div>
-							<div class="catalog-item-price">
-								<div class="price_new">3575.00 <span class="currency">грн.</span></div>
-							</div>
-							<div class="catalog-item-count">
-								<a href="#" class='count-minus'>-</a>
-								<input type="text" class="" value="1">
-								<a href="#" class='count-plus'>+</a>
-							</div>
-							<div class="catalog-item-button">
-								<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
-							</div>
-						</div>
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
-								<div class="catalog-item-size">
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-title">
+									<p>Куртка Элизар</p>
+									<p class="article-item">Код: 210914</p>
 								</div>
-								<div class="catalog-item-color">
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-price">
+									<div class="price_new">3575.00 <span class="currency">грн.</span></div>
+								</div>
+								<div class="catalog-item-count">
+									<a href="#" class='count-minus'>-</a>
+									<input type="text" class="" value="1">
+									<a href="#" class='count-plus'>+</a>
+								</div>
+								<div class="catalog-item-button">
+									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
 								</div>
 							</div>
-							<div class="catalog-item-title">
-								<p>Куртка Элизар</p>
-								<p class="article-item">Код: 210914</p>
-							</div>
-							<div class="catalog-item-price">
-								<div class="price_new">3575.00 <span class="currency">грн.</span></div>
-							</div>
-							<div class="catalog-item-count">
-								<a href="#" class='count-minus'>-</a>
-								<input type="text" class="" value="1">
-								<a href="#" class='count-plus'>+</a>
-							</div>
-							<div class="catalog-item-button">
-								<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
-							</div>
-						</div>
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
-								<div class="catalog-item-size">
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
-									</ul>
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
 								</div>
-								<div class="catalog-item-color">
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-info">
+									<div class="catalog-item-size">
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-color">
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
 								</div>
-							</div>
-							<div class="catalog-item-title">
-								<p>Куртка Элизар</p>
-								<p class="article-item">Код: 210914</p>
-							</div>
-							<div class="catalog-item-price">
-								<div class="price_new">3575.00 <span class="currency">грн.</span></div>
-							</div>
-							<div class="catalog-item-count">
-								<a href="#" class='count-minus'>-</a>
-								<input type="text" class="" value="1">
-								<a href="#" class='count-plus'>+</a>
-							</div>
-							<div class="catalog-item-button">
-								<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
-							</div>
-						</div>
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
-								<div class="catalog-item-size">
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-title">
+									<p>Куртка Элизар</p>
+									<p class="article-item">Код: 210914</p>
 								</div>
-								<div class="catalog-item-color">
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-price">
+									<div class="price_new">3575.00 <span class="currency">грн.</span></div>
+								</div>
+								<div class="catalog-item-count">
+									<a href="#" class='count-minus'>-</a>
+									<input type="text" class="" value="1">
+									<a href="#" class='count-plus'>+</a>
+								</div>
+								<div class="catalog-item-button">
+									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
 								</div>
 							</div>
-							<div class="catalog-item-title">
-								<p>Куртка Элизар</p>
-								<p class="article-item">Код: 210914</p>
-							</div>
-							<div class="catalog-item-price">
-								<div class="price_new">3575.00 <span class="currency">грн.</span></div>
-							</div>
-							<div class="catalog-item-count">
-								<a href="#" class='count-minus'>-</a>
-								<input type="text" class="" value="1">
-								<a href="#" class='count-plus'>+</a>
-							</div>
-							<div class="catalog-item-button">
-								<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
-							</div>
-						</div>
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
-								<div class="catalog-item-size">
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
-									</ul>
+							<div class="catalog-item">
+								<div class="catalog-item_img">
+									<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
 								</div>
-								<div class="catalog-item-color">
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-info">
+									<div class="catalog-item-size">
+										<ul>
+											<li><a href="#">152</a></li>
+											<li><a href="#">154</a></li>
+											<li><a href="#">156</a></li>
+											<li><a href="#">158</a></li>
+											<li><a href="#">160</a></li>
+											<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
+										</ul>
+									</div>
+									<div class="catalog-item-color">
+										<ul>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
+											<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
+										</ul>
+									</div>
 								</div>
-							</div>
-							<div class="catalog-item-title">
-								<p>Куртка Элизар</p>
-								<p class="article-item">Код: 210914</p>
-							</div>
-							<div class="catalog-item-price">
-								<div class="price_new">3575.00 <span class="currency">грн.</span></div>
-							</div>
-							<div class="catalog-item-count">
-								<a href="#" class='count-minus'>-</a>
-								<input type="text" class="" value="1">
-								<a href="#" class='count-plus'>+</a>
-							</div>
-							<div class="catalog-item-button">
-								<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
-							</div>
-						</div>
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
-								<div class="catalog-item-size">
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-title">
+									<p>Куртка Элизар</p>
+									<p class="article-item">Код: 210914</p>
 								</div>
-								<div class="catalog-item-color">
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-price">
+									<div class="price_new">3575.00 <span class="currency">грн.</span></div>
 								</div>
-							</div>
-							<div class="catalog-item-title">
-								<p>Куртка Элизар</p>
-								<p class="article-item">Код: 210914</p>
-							</div>
-							<div class="catalog-item-price">
-								<div class="price_new">3575.00 <span class="currency">грн.</span></div>
-							</div>
-							<div class="catalog-item-count">
-								<a href="#" class='count-minus'>-</a>
-								<input type="text" class="" value="1">
-								<a href="#" class='count-plus'>+</a>
-							</div>
-							<div class="catalog-item-button">
-								<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
-							</div>
-						</div>
-						<div class="catalog-item">
-							<div class="catalog-item_img">
-								<a href="#"><img src="img/photo/prod-item.png" alt=""></a>
-							</div>
-							<div class="catalog-item-info">
-								<div class="catalog-item-size">
-									<ul>
-										<li><a href="#">152</a></li>
-										<li><a href="#">154</a></li>
-										<li><a href="#">156</a></li>
-										<li><a href="#">158</a></li>
-										<li><a href="#">160</a></li>
-										<li class="fancy"><a href="img/photo/tableRU.png" class="fancy-table"><img src="img/photo/icon.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-count">
+									<a href="#" class='count-minus'>-</a>
+									<input type="text" class="" value="1">
+									<a href="#" class='count-plus'>+</a>
 								</div>
-								<div class="catalog-item-color">
-									<ul>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/product1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/p.jpg" alt=""></a></li>
-										<li><a href="#"><img src="img/photo/prod-item.png" alt=""></a></li>
-									</ul>
+								<div class="catalog-item-button">
+									<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
 								</div>
-							</div>
-							<div class="catalog-item-title">
-								<p>Куртка Элизар</p>
-								<p class="article-item">Код: 210914</p>
-							</div>
-							<div class="catalog-item-price">
-								<div class="price_new">3575.00 <span class="currency">грн.</span></div>
-							</div>
-							<div class="catalog-item-count">
-								<a href="#" class='count-minus'>-</a>
-								<input type="text" class="" value="1">
-								<a href="#" class='count-plus'>+</a>
-							</div>
-							<div class="catalog-item-button">
-								<a href="#" class="base_button"><i class="fa fa-shopping-cart"></i>В корзину</a>
 							</div>
 						</div>
 					</div>

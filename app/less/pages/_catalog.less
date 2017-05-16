@@ -32,8 +32,10 @@
 			&:last-child{
 				border-right: 1px solid #eaeaea;
 			}
-			&.active, &:hover a{
-				color: @red;
+			&.active, &:hover{
+				a{
+					color: @red;
+				}					
 			}
 			a{
 				color: initial;
@@ -44,8 +46,35 @@
 				transition: all 0.3s;
 
 				.fa{
-					font-size: 20px;
+					font-size: 25px;
+					vertical-align: middle;
 				}
+			}
+		}
+	}
+	.catalog-filter_sorter{
+		display: inline-block;
+		padding: 0 20px;
+		select{
+			height: 41px;
+			border: 1px solid #ececec;
+			background-color: #ffffff;
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 36px;
+			color: #666666;
+			padding-left: 10px;
+			outline: none;
+			&:first-child{
+				width: 211px;
+				margin-right: 10px;
+			}
+			&:last-child{
+				width: 163px;
+			}
+			option{
+				vertical-align: middle;
+				font-size: 14px;
 			}
 		}
 	}
