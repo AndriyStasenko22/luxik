@@ -61,7 +61,8 @@ products_slider.owlCarousel({
 	colection_slider.owlCarousel({
 		items:1,
 		autoHeight: true,
-		loop: true
+		loop: true,
+		smartSpeed: 700
 	})
 
 	// таби на головній сторінці
@@ -89,10 +90,12 @@ products_slider.owlCarousel({
 	$('.mobile-menu-btn').click(function() {
 		$('.mobile-menu-left').animate({left: '0%'}, 500);
 		$('.body-overlay').css("visibility",'visible').animate({opacity: 1},500);
+		$('body').css('overflow', 'hidden');
 	});
 	$('.body-overlay').click(function() {
 		$('.body-overlay').css("visibility",'hidden').animate({opacity: 0}, 500);
 		$('.mobile-menu-left').animate({left: '-100%'}, 500);
+		$('body').css('overflow', 'visible');
 	});
 
 
