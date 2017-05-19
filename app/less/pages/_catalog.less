@@ -121,7 +121,7 @@
 	border: 1px solid #eaeaea;
 	margin-top: 30px;
 }
-.catalog-item_img, .catalog-item-info, .price_old, .price_new, .catalog-item-button, .catalog-item-count{
+.catalog-item_img, .catalog-item-info, .catalog-item-button, .catalog-item-count{
 	display: block;
 	float: left;
 }
@@ -192,6 +192,7 @@
 		color: #282828;
 		margin-right: 10px;
 		font-size: 20px;
+		display: inline-block;
 		.currency{
 			font-size: 19px;
 		}
@@ -200,6 +201,7 @@
 		vertical-align: top;
 		color: @red;
 		text-decoration: line-through;
+		display: inline-block;
 		.currency{
 			vertical-align: middle;
 			font-size: 10px;
@@ -379,10 +381,20 @@
 	}
 }
 
-.show-table{
+.catalog-list .table_block{
+	display: none;
+}
+
+.catalog-table{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	.table_block{
+		display: block;
+		float: left;
+		width: 100%;
+		border-top: 1px solid  #eaeaea;
+	}
 	.catalog-item{
 		min-height: 374px;
 		width: 32%;
@@ -391,19 +403,29 @@
 	.catalog-item_img{
 		width: 65%;
 		max-height: 240px;
-		height: auto;
+		height: 100%;
+		img{
+			height: 100%;
+		}
 	}
 	.catalog-item-info{
 		width: 35%;
 		padding: 10px;
 		max-height: 240px;
+		border-left: 1px solid #eaeaea;
+		.catalog-item-title, .catalog-item-price, .catalog-item-count, .catalog-item-button{
+			display: none;
+		}
+
 	}
 	.catalog-item-color, .catalog-item-size{
 		display: block;
-		float: left;
 		vertical-align: top;
+		p{
+			display: none;
+		}
 		ul{
-			display: inline-block;
+			display: block;
 			li{
 				display: block;
 				margin-right: 0;
@@ -411,7 +433,11 @@
 			}
 		}
 	}
+	.catalog-item-color{
+		float: right;
+	}
 	.catalog-item-size{
+		float: left;
 		ul{
 			margin-right: 10px;
 		}
@@ -441,17 +467,20 @@
 			display: block;
 		}
 		.article-item{
-			float: left;
+			float: none;
 			display: block;
 			margin-bottom: 0;
 		}
 	}
 	.catalog-item-price{
-		margin-bottom: 12px;
+		margin: 0 0 10px;
 		.price_new{
 			display: block;
 			text-align: right;
+			float: none;
 			margin-right: 0;
+			line-height: 1;
+			color: @red;
 		}
 	}
 	.catalog-item-count{

@@ -5,19 +5,44 @@ $(document).ready(function() {
 	var anim=['fadeInLeft', 'fadeInRight', 'fadeInDown', 'fadeInUp'];
 	var number=Math.round(Math.random()*anim.length);
 	
-	$('.home_slider').slick({
-		infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows:false
-	});
-	// $('.home_slider').owlCarousel({
-	// 	items: 1,
-	// 	loop: true,
-	// 	animateOut: 'slideOutDown',
-	// 	animateIn: 'slideOutDown',
-
+	// $('.home_slider').slick({
+	// 	infinite: true,
+	// 	slidesToShow: 1,
+	// 	slidesToScroll: 1,
+	// 	arrows:false
 	// });
+	var owl = $('.home_slider');
+	owl.owlCarousel({
+		items:1,
+		autoHeight: true,
+		loop: true,
+		smartSpeed: 700
+	});
+	// // Fired before current slide change
+	owl.on('change.owl.carousel', function(event) {
+			$('.owl-stage .owl-item:not(.active)').find('.slider-item-text').removeClass('animated fadeInLeft');
+		// var $currentItem = $('.owl-item', owl).eq(event.item.index);
+		// var $elemsToanim = $currentItem.addClass('animate fadeInLeft');
+		// setAnimation ($elemsToanim, 'out');
+	});
+
+	// // // Fired after current slide has been changed
+	owl.on('changed.owl.carousel', function(event) {
+		// $('.active .slider-item-text').addClass('animated fadeInLeft');
+		// console.log('asasa');
+
+		var $currentItem = $('.owl-item', owl).eq(event.item.index);
+		$currentItem.find('.slider-item-text').addClass('animated fadeInLeft');
+		console.log($currentItem);
+		 // var $currentItem = $('.home_slider').children('.owl-item').width();
+		// console.log($currentItem);
+	// owl.find('.owl-item.active').removeClass('animated fadeInLeft');
+	
+		// var $currentItem = $('.owl-item', owl).eq(event.item.index);
+		// var $elemsToanim = $currentItem.find("[data-animation-in]");
+		// setAnimation ($elemsToanim, 'in');
+	});
+
 
 
 // Home products slider
@@ -166,51 +191,63 @@ products_slider.owlCarousel({
 		addActive(this);
 	});
 
-	var showcase = $("#carousel");
-	showcase.Cloud9Carousel( {
-		yRadius: 60,
-		xRadius: 750,
-		transforms:true,
-		mirrorOptions: {
-			gap: 20,
-			height: 0.2
-		},
-		buttonLeft: $("#buttons > .left"),
-		buttonRight: $("#buttons > .right"),
-	// autoPlay: true,
-	bringToFront: true,
-	onLoaded: function() {
-		showcase.css( 'visibility', 'visible' ),
-		showcase.css( 'overflow', 'visible' )
-		showcase.css( 'display', 'none' ),
-		showcase.fadeIn( 1500 ),
-		showcase.css( '', '' )
-	},
-	onRendered:function() {
-		// showcase.children("img:not(.cloud9-item)").removeClass('animated fadeInUp');
-		showcase.children("img:not(.cloud9-item, .circle4)").addClass('animated fadeInUp');
-		showcase.children("img.circle4").addClass('animated fadeIn');
-		showcase.children("h3").addClass('animated fadeInLeft');
-		showcase.children(".cloud9-item").each(function() {
-			if($(this).css('z-index') != 100){
-				$(this).css('filter', 'blur(2px)');
-			}
-			else{
-				$(this).css('filter', 'blur(0px)');
-			}
-		});
-	},
-	onAnimationFinished: function(){
+// 	var showcase = $("#carousel");
+// 	showcase.Cloud9Carousel( {
+// 		yRadius: 60,
+// 		xRadius: 750,
+// 		transforms:true,
+// 		mirrorOptions: {
+// 			gap: 20,
+// 			height: 0.2
+// 		},
+// 		buttonLeft: $("#buttons > .left"),
+// 		buttonRight: $("#buttons > .right"),
+// 	// autoPlay: true,
+// 	bringToFront: true,
+// 	onLoaded: function() {
+// 		showcase.css( 'visibility', 'visible' ),
+// 		showcase.css( 'overflow', 'visible' )
+// 		showcase.css( 'display', 'none' ),
+// 		showcase.fadeIn( 1500 ),
+// 		showcase.css( '', '' )
+// 	},
+// 	onRendered:function() {
+// 		// showcase.children("img:not(.cloud9-item)").removeClass('animated fadeInUp');
+// 		showcase.children("img:not(.cloud9-item, .circle4)").addClass('animated fadeInUp');
+// 		showcase.children("img.circle4").addClass('animated fadeIn');
+// 		showcase.children("h3").addClass('animated fadeInLeft');
+// 		showcase.children(".cloud9-item").each(function() {
+// 			if($(this).css('z-index') != 100){
+// 				$(this).css('filter', 'blur(2px)');
+// 			}
+// 			else{
+// 				$(this).css('filter', 'blur(0px)');
+// 			}
+// 		});
+// 	},
+// 	onAnimationFinished: function(){
+// 	}
+// });
+
+// 	$('.cloud9-item, #buttons>.left, #buttons>.right').click(function() {
+// 		$('#carousel img:not(.cloud9-item, .circle4)').removeClass('animated fadeInUp');
+// 		$('#carousel img.circle4').removeClass('animated fadeIn');
+// 		$('#carousel h3').removeClass('animated fadeInLeft');
+// 	});
+
+$('.main-catalog-buttons>li a').click(function(event) {
+	event.preventDefault();
+	$(this).parent().siblings('.active').removeClass('active');
+	$(this).parent().addClass('active');
+	if ($(this).hasClass('show_table') && $(this).parent().hasClass('active')) {
+		$('.catalog-content .tab').removeClass('catalog-list catalog-table').addClass('catalog-table');
+		$('.preloader').css("display", 'flex').delay(300).fadeOut('slow');
+	}
+	if ($(this).hasClass('show_list') && $(this).parent().hasClass('active')) {
+		$('.catalog-content .tab').removeClass('catalog-list catalog-table').addClass('catalog-list');
+		$('.preloader').css("display", 'flex').delay(300).fadeOut('slow');
 	}
 });
-
-	$('.cloud9-item, #buttons>.left, #buttons>.right').click(function() {
-		$('#carousel img:not(.cloud9-item, .circle4)').removeClass('animated fadeInUp');
-		$('#carousel img.circle4').removeClass('animated fadeIn');
-		$('#carousel h3').removeClass('animated fadeInLeft');
-	});
-
-
 });
 
 
