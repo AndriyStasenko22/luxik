@@ -1,83 +1,66 @@
 $(document).ready(function() {
 
 
+	new Vivus('html5-logo', {duration: 200});
+	// головний слайдер
+	var home_slider = $('.home_slider');
+	home_slider.on('init', function(event, slick){
+		setTimeout(function(){
+			home_slider.find('.slick-active').children('.slider-item-text').addClass('animated fadeInUp').show();
+		},1000);
+	});
 
-	var anim=['fadeInLeft', 'fadeInRight', 'fadeInDown', 'fadeInUp'];
-	var number=Math.round(Math.random()*anim.length);
-	
-	// $('.home_slider').slick({
-	// 	infinite: true,
-	// 	slidesToShow: 1,
-	// 	slidesToScroll: 1,
-	// 	arrows:false
-	// });
-	var owl = $('.home_slider');
-	owl.owlCarousel({
-		items:1,
-		autoHeight: true,
+	home_slider.slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows:false,
+		autoplay: true,
+		autoplaySpeed: 3500,
+		speed: 1500
+	});
+
+	home_slider.on('afterChange', function(event, slick, currentSlide, nextSlide){
+		setTimeout(function(){
+			home_slider.find('.slick-active').children('.slider-item-text').addClass('animated fadeInUp').show();
+		},500);
+	});
+	home_slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+		home_slider.find('.slider-item-text').removeClass('animated fadeInUp').hide();
+	});
+
+	// Home products slider
+	var products_slider=$('.products-slider');
+	products_slider.owlCarousel({
+		items: 4,
+		margin: 15,
 		loop: true,
-		smartSpeed: 700
-	});
-	// // Fired before current slide change
-	owl.on('change.owl.carousel', function(event) {
-			$('.owl-stage .owl-item:not(.active)').find('.slider-item-text').removeClass('animated fadeInLeft');
-		// var $currentItem = $('.owl-item', owl).eq(event.item.index);
-		// var $elemsToanim = $currentItem.addClass('animate fadeInLeft');
-		// setAnimation ($elemsToanim, 'out');
-	});
-
-	// // // Fired after current slide has been changed
-	owl.on('changed.owl.carousel', function(event) {
-		// $('.active .slider-item-text').addClass('animated fadeInLeft');
-		// console.log('asasa');
-
-		var $currentItem = $('.owl-item', owl).eq(event.item.index);
-		$currentItem.find('.slider-item-text').addClass('animated fadeInLeft');
-		console.log($currentItem);
-		 // var $currentItem = $('.home_slider').children('.owl-item').width();
-		// console.log($currentItem);
-	// owl.find('.owl-item.active').removeClass('animated fadeInLeft');
-	
-		// var $currentItem = $('.owl-item', owl).eq(event.item.index);
-		// var $elemsToanim = $currentItem.find("[data-animation-in]");
-		// setAnimation ($elemsToanim, 'in');
-	});
-
-
-
-// Home products slider
-
-var products_slider=$('.products-slider');
-products_slider.owlCarousel({
-	items: 4,
-	margin: 15,
-	loop: true,
-	nav: true,
-	smartSpeed: 700,
-	autoplay: true,
-	autoplaySpeed: 700,
-	autoplayTimeout:3000,
-	navText:["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	responsiveClass:true,
-	responsive:{
-		0:{
-			items:1,
-			margin:0,
-			nav:false
-		},
-		400:{
-			items:2,
-			nav:false
-		},
-		768:{
-			items:3,
-			nav:false
-		},
-		992:{
-			items:4
+		nav: true,
+		smartSpeed: 700,
+		autoplay: true,
+		autoplaySpeed: 700,
+		autoplayTimeout:3000,
+		navText:["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+		responsiveClass:true,
+		responsive:{
+			0:{
+				items:1,
+				margin:0,
+				nav:false
+			},
+			400:{
+				items:2,
+				nav:false
+			},
+			768:{
+				items:3,
+				nav:false
+			},
+			992:{
+				items:4
+			}
 		}
-	}
-});
+	});
 
 	// Home colection slider
 	var colection_slider = $('.colection-slider');
@@ -88,6 +71,20 @@ products_slider.owlCarousel({
 		loop: true,
 		smartSpeed: 700
 	})
+
+
+	var card_slider = $('.product-card-slider');
+
+	card_slider.slick({
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		vertical: true,
+		arrows: true,
+		nextArrow:'<a class="card_next"><i class="fa fa-angle-down"></i></a>',
+		prevArrow:'<a class="card_prev"><i class="fa fa-angle-up"></i></a>'
+	});
+// class="card_next"
 
 	// таби на головній сторінці
 	$('.colection_tabs li').click(function() {
@@ -141,7 +138,7 @@ products_slider.owlCarousel({
 	$('.fancy-table').fancybox();
 
 	// вибір розміру товара
-	$('.catalog-item .catalog-item-size li:not(.fancy)>a').click(function(event) {
+	$('.catalog-item .catalog-item-size li:not(.fancy)>a, .product-card .catalog-item-size li:not(.fancy)>a').click(function(event) {
 		event.preventDefault();
 		addActive(this);
 	});
@@ -152,6 +149,17 @@ products_slider.owlCarousel({
 		addActive(this);
 		let srcImg=$(this).children('img').attr('src');
 		$(this).parents('.catalog-item-info').siblings('.catalog-item_img').find('img').attr('src', srcImg);
+	});
+
+	var img_src=$('.product-card .catalog-item-color li.active a img').attr('src');
+	$('.product-card .catalog-item_img img').attr('src', img_src);
+
+	// вибір кольора товара
+	$('.product-card .catalog-item-color li a, .product-card-slider .card-slider-img').click(function(event) {
+		event.preventDefault();
+		addActive(this);
+		let srcImg=$(this).children('img').attr('src');
+		$(this).parents('.product-card').find('.catalog-item_img').find('img').attr('src', srcImg);
 	});
 
 	// кількість товару
@@ -190,6 +198,39 @@ products_slider.owlCarousel({
 		event.preventDefault();
 		addActive(this);
 	});
+
+	var as = $('.product-card .catalog-item_img a').children('img').attr('src');
+	$('.product-card .catalog-item_img a').attr('href', as);
+
+	// fancybox товару
+	$(".product-card .catalog-item_img a").click(function (e) {
+		e.preventDefault();
+		if ($(window).width() >= 992) {
+
+			var srcimg = [];
+			var firts_src=$(this).children('img').attr('src');
+			href = {src: firts_src};
+			srcimg.push(href);
+			$('.product-card .product-card-slider .card-slider-img').not('.slick-cloned').each(function () {
+				if (firts_src != $(this).children('img').attr('src')) {
+					href = {src: $(this).children('img').attr('src')};
+					srcimg.push(href);
+				}
+			});
+			$.fancybox.open(
+				srcimg,
+				{
+					type: "image",
+					live: false
+				});
+		}
+	});
+
+
+    // $('.product-card .fancy-table').click(function() {
+    	// var as = $('.product-card .catalog-item_img a').children('img').attr('src');
+    	// $('.product-card a').attr('href', as);
+    // });
 
 // 	var showcase = $("#carousel");
 // 	showcase.Cloud9Carousel( {
