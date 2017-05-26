@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-	new Vivus('html5-logo', {duration: 200});
 	// головний слайдер
 	var home_slider = $('.home_slider');
 	home_slider.on('init', function(event, slick){
@@ -276,6 +274,7 @@ $(document).ready(function() {
 // 		$('#carousel h3').removeClass('animated fadeInLeft');
 // 	});
 
+// таблиця/список
 $('.main-catalog-buttons>li a').click(function(event) {
 	event.preventDefault();
 	$(this).parent().siblings('.active').removeClass('active');
@@ -289,6 +288,26 @@ $('.main-catalog-buttons>li a').click(function(event) {
 		$('.preloader').css("display", 'flex').delay(300).fadeOut('slow');
 	}
 });
+
+// таби на сторінці "Карточка товара"
+$('.card_list a').click(function(event) {
+	event.preventDefault();
+	var block_class = $(this).attr('href');
+	addActive(this);
+	$('.card-tabs .card-tab-item').each(function() {
+		if ($(this).hasClass(block_class)) {
+			$(this).addClass('active');
+		}
+		else{
+			$(this).removeClass('active');
+		}
+	});
+});
+
+$('.write_reviews .reviews_title').click(function() {
+	$(this).toggleClass('open').siblings('.review_content').slideToggle('slow');
+});
+
 });
 
 

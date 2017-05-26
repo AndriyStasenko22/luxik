@@ -233,7 +233,7 @@
 									<li><a href="#">Вопросы</a></li>
 								</ul>
 							</li>
-							<li><a href="#">новости</a></li>
+							<li><a href="news.html">новости</a></li>
 							<li><a href="#">О нас</a></li>
 							<li><a href="#">Контакты</a></li>
 							<li><a href="#">Look Book</a></li>
@@ -291,17 +291,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6">
-					<div class="navigator-wrap">
-						<h1 class="section_title">Каталог - Школа - брюки</h1>
-					</div>
+					<h1 class="section_title">Каталог - Школа - брюки</h1>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<div class="navigator-wrap">
-						<ul class="navigationU_list">
-							<li><a href="index.html">Главная</a><span>></span></li>
-							<li><a href="catalog.html">Каталог</a></li>
-						</ul>
-					</div>
+					<ul class="navigationU_list">
+						<li><a href="index.html">Главная</a><span>></span></li>
+						<li><a href="catalog.html">Каталог</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -405,20 +401,62 @@
 				<div class="col-sm-12">
 					<div class="card-border clearfix">
 						<div class="col-sm-3">
-							<ul class="card_list">
-								<li class="active"><a href="#">Описание</a></li>
-								<li><a href="#">Отзывы (2)</a></li>
-								<li><a href="#">Доставка</a></li>
-								<li><a href="#">Гарантия</a></li>
-								<li><a href="#">Оплата</a></li>
-							</ul>
+							<div class="row">
+								<ul class="card_list">
+									<li class="active"><a href="card-product-info">Описание</a></li>
+									<li><a href="card-product-reviews">Отзывы (2)</a></li>
+									<li><a href="card-product-delivery">Доставка</a></li>
+									<li><a href="card-product-guarantee">Гарантия</a></li>
+									<li><a href="card-product-payment">Оплата</a></li>
+								</ul>
+							</div>
 						</div>
 						<div class="col-sm-9">
-							<div class="card-tab-item">Зимняя куртка для мальчика-подростка. Выполнена с эффектом пуховика и из термостойкой ткани. Украшена искусственным мехом (которое снимается), лампасами в контраст, накладными карманами на кнопках. Особенностями является воротник из искусственного меха, который защитит от холода шею, планка и манжеты на кнопках, которые можно регулировать. Внешняя сторона плащевая ткань, подкладка флис + нейлон, наполнитель силиконизированный синтепон 200 + 150 мг.</div>
-							<div class="card-tab-item"></div>
-							<div class="card-tab-item"></div>
-							<div class="card-tab-item"></div>
-							<div class="card-tab-item"></div>
+							<div class="card-tab-item card-product-info active">Зимняя куртка для мальчика-подростка. Выполнена с эффектом пуховика и из термостойкой ткани. Украшена искусственным мехом (которое снимается), лампасами в контраст, накладными карманами на кнопках. Особенностями является воротник из искусственного меха, который защитит от холода шею, планка и манжеты на кнопках, которые можно регулировать. Внешняя сторона плащевая ткань, подкладка флис + нейлон, наполнитель силиконизированный синтепон 200 + 150 мг.</div>
+							<div class="card-tab-item card-product-reviews">
+								<div class="write_reviews">
+									<h4 class="reviews_title">Написать отзыв<i class="fa fa-angle-right" aria-hidden="true"></i></h4>
+									<div class="review_content">
+										<form action="" class="review_form">
+											<div class="input_grup">
+												<div class="input_block">
+													<label for="">Имя</label>
+													<input type="text">
+												</div>
+												<div class="input_block">
+													<label for="">Email</label>
+													<input type="text">
+												</div>
+											</div>
+											<div class="coment_block">
+												<label for="">Комментарий</label>
+												<textarea name="" id="" cols="30" rows="10"></textarea>
+											</div>
+											<a href="#" class="base_button">Добавить отзыв</a>
+										</form>
+									</div>
+								</div>
+								<div class="reviews_list">
+									<h4 class="reviews_title">Отзывы клиентов</h4>
+									<div class="review_content">
+										<ul class="reviews_ul">
+											<li>
+												<p class="review_user_name">Карина</p>
+												<p class="review_date">Март 12.03.2017</p>
+												<p class="review_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+											</li>
+											<li>
+												<p class="review_user_name">Карина</p>
+												<p class="review_date">Март 12.03.2017</p>
+												<p class="review_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+											</li>
+										</ul>	
+									</div>
+								</div>
+							</div>
+							<div class="card-tab-item card-product-delivery">Доставка</div>
+							<div class="card-tab-item card-product-guarantee">Гарантия</div>
+							<div class="card-tab-item card-product-payment">Оплата</div>
 						</div>
 					</div>
 				</div>
