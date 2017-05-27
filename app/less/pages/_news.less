@@ -1,4 +1,4 @@
-// новини головна сторінка
+// новини
 
 .news{
 	background-color: #fff;
@@ -6,11 +6,13 @@
 	min-height: 425px;
 	margin-bottom: 30px;
 	.news_img{
-		min-height: 210px;
+		height: 210px;
 		overflow: hidden;
 		img{
 			width: 100%;
 			height: auto;
+			max-height: 100%;
+			max-width: 100%;
 		}
 	}
 	.news_title{
@@ -66,13 +68,28 @@
 		vertical-align: middle;
 		background-image: url(../img/icon/chat.png);
 	}
+	.news_content{
+		padding: 30px 20px 20px;
+	}
 	.news_short_info{
-		padding: 25px 35px 0 19px;
-		height: 135px;
+		height: 60px;
 		overflow: hidden;
 		display: block;
 		position: relative;
-		margin-bottom: 30px;
+		p{
+			margin-bottom: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+	}
+	.base_button{
+		height: 30px !important;
+		width: 130px !important;
+		margin-top: 25px !important;
+		margin-right: 0 !important;
+		line-height: 28px !important;
+		font-size: 10px !important;
+		border: 1px solid #3f3f3f !important;
 	}
 }
 
@@ -88,4 +105,12 @@
 			margin-left: 10px;
 		}
 	}
+}
+
+.news_container{
+	margin-bottom: 40px;
+}
+
+.news_paginator{
+	padding-bottom: 110px;
 }

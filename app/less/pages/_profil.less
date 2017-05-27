@@ -1,0 +1,40 @@
+.profil{
+	margin-bottom: 80px;
+	.section_line {
+		margin-bottom: 0;
+	}
+	.horizontal_tab{
+		justify-content: center;
+	}
+	.profile_tab{
+		margin-bottom: 40px;
+		li:first-child{
+			margin-right: 50px;
+		}
+	}
+	.base_form{ 
+		label{
+			margin-top: 35px;
+			span{
+				color: @red;
+			}
+		}
+		input{
+			padding-right: 35px;
+		}
+		.fa{
+			position: relative;
+			vertical-align: top;
+			line-height: 38px;
+			font-size: 16px;
+			color:#94db60;
+			&::before{
+				position: absolute;
+				left: -32px;
+			}
+		}
+	}
+	.input-group-addon{
+		border-radius: 0 !important;
+	}
+}

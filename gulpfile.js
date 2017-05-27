@@ -24,7 +24,8 @@ gulp.task('scripts', function() {
         'app/libs/slick-carousel/slick/slick.min.js', //SlickSlider
         'app/libs/owl.carousel/dist/owl.carousel.min.js', //OwlCarousel
         'app/libs/jquery-fancyBox/dist/jquery.fancybox.min.js', //FancyBox
-        'app/libs/jquery-mousewheel/jquery.mousewheel.min.js' //FancyBox
+        'app/libs/jquery-mousewheel/jquery.mousewheel.min.js',
+        'app/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'
         ])
         .pipe(concat('libs.min.js')) // Собираем их в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл

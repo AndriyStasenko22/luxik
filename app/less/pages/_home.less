@@ -3,53 +3,6 @@
 	.section_line{
 		margin-bottom: 0;
 	}
-	.colection_tabs{
-		display: flex;
-		justify-content: space-around;
-		height: 48px;
-		border-bottom: 2px solid  @color_line;
-		li{
-			height: 100%;
-			cursor: pointer;
-			position: relative;
-			&:hover{
-				color: @red;
-				.dot{
-					visibility: visible;
-					opacity: 1;
-				}
-			}
-		}
-		li.active{
-			color: @red;
-			.dot{
-				visibility: visible;
-				opacity: 1;
-			}
-		}
-		.tab{
-			line-height: 14px;
-			text-transform: uppercase;
-			font-weight: 600;
-			transition: all 0.3s;
-			line-height: 48px;
-			@media only screen and (max-width : 768px){
-				font-size: 12px;
-			}
-		}
-		.dot{
-			position: absolute;
-			left: 50%;
-			margin-left: -4px;
-			bottom: -4px;
-			height: 8px;
-			width: 8px;
-			background-color: @red;
-			visibility: hidden;
-			opacity: 0;
-			transition: all 0.4s;
-		}
-	}
 }
 
 // "перейти в каталог" головна сторінка

@@ -82,14 +82,20 @@ $(document).ready(function() {
 		nextArrow:'<a class="card_next"><i class="fa fa-angle-down"></i></a>',
 		prevArrow:'<a class="card_prev"><i class="fa fa-angle-up"></i></a>'
 	});
-// class="card_next"
+	
+	// таби головна/профіль
+	$('.horizontal_tab li').click(function() {
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+	});
 
 	// таби на головній сторінці
 	$('.colection_tabs li').click(function() {
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
 		colection_slider.trigger("to.owl.carousel", [$(this).index(), 300]);
 	});
+
+
+
 
 	// пагінатор
 	$('.paginator li a').click(function(e) {
